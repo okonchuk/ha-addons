@@ -1,0 +1,17 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: "Cloudflared Tunnel"
+version: "1.0"
+slug: "cloudflared"
+description: "Cloudflare Tunnel"
+arch:
+  - aarch64
+  - armv7
+  - amd64
+startup: services
+boot: auto
+init: false
+options:
+  token: ""
+schema:
+  token: "str"
+image: "cloudflare/cloudflared:latest"
