@@ -1,17 +1,17 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: Example add-on
-version: "1.2.0"
-slug: example
-description: Example add-on
-url: "https://github.com/home-assistant/addons-example/tree/main/example"
+name: "Cloudflared Tunnel"
+version: "1.0"
+slug: "cloudflared"
+description: "Cloudflare Tunnel"
 arch:
   - aarch64
+  - armv7
   - amd64
+startup: services
+boot: auto
 init: false
-map:
-  - share:rw
 options:
-  message: "Hello world..."
+  token: ""
 schema:
-  message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-example"
+  token: "str"
+image: "cloudflare/cloudflared:latest"
